@@ -41,13 +41,12 @@ class _Add_AddressState extends State<Add_Address> {
               height: 60,
               width: 350,
               child: ListTile(
-                leading:
-                    done == false
-                        ? const Icon(
-                            Icons.add,
-                            size: 30,
-                          )
-                        : null,
+                leading: done == false
+                    ? const Icon(
+                        Icons.add,
+                        size: 30,
+                      )
+                    : null,
                 title: Text(
                   '${selectedGovernorate ?? hint} ${selectedCity ?? ''} ${StreetController?.text ?? ''} ${AptController?.text ?? ''}',
                   style: const TextStyle(fontSize: 17),
@@ -136,7 +135,7 @@ class _Add_AddressState extends State<Add_Address> {
                     padding: EdgeInsets.zero,
                     child: Text(
                       'Confirm',
-                      style: TextStyle(fontSize: 23, color: Colors.white),
+                      style: TextStyle(fontSize: 23),
                     ),
                   ),
                 ),
@@ -152,7 +151,7 @@ class _Add_AddressState extends State<Add_Address> {
       TextEditingController? controller, String? labelText) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: const Color.fromARGB(104, 0, 0, 0)),
+        border: Border.all(color: Color.fromARGB(255, 0, 0, 0)),
         borderRadius: BorderRadius.circular(10),
       ),
       height: 60,
@@ -162,11 +161,13 @@ class _Add_AddressState extends State<Add_Address> {
         child: TextFormField(
           controller: controller,
           keyboardType: TextInputType.streetAddress,
-          cursorColor: Colors.black,
+          // cursorColor: Colors.black,
           decoration: InputDecoration(
             border: InputBorder.none,
             labelText: labelText,
-            labelStyle: const TextStyle(fontSize: 17, color: Colors.black),
+            labelStyle: const TextStyle(
+              fontSize: 17,
+            ),
           ),
           onChanged: (val) {
             setState(() {
@@ -186,7 +187,7 @@ class _Add_AddressState extends State<Add_Address> {
       String hint, List<String> items, String? selectedValue) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: const Color.fromARGB(104, 0, 0, 0)),
+        border: Border.all(color: Color.fromARGB(255, 0, 0, 0)),
         borderRadius: BorderRadius.circular(10),
       ),
       width: double.infinity,
@@ -220,4 +221,3 @@ class _Add_AddressState extends State<Add_Address> {
     );
   }
 }
-

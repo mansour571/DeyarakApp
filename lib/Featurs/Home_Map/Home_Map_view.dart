@@ -17,7 +17,7 @@ class _MapViewState extends State<MapView> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     TabController tabController = TabController(vsync: this, length: 4);
     return Scaffold(
-      backgroundColor: Colors.white,
+      // backgroundColor: Colors.white,
 //--------------------------------------------------
       // bottomNavigationBar: const BottomNavBar(),
 //--------------------------------------------------

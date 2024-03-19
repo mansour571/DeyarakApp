@@ -27,7 +27,7 @@ class _DividerState extends State<Divider_> {
     dividerHeight = 30 * scaleFactor;
     dividerIndent = 20 * scaleFactor;
     dividerEndIndent = 20 * scaleFactor;
-    dividerThickness = 0.5 * scaleFactor;
+    dividerThickness = 0.8 * scaleFactor;
   }
 
   @override
@@ -37,7 +37,7 @@ class _DividerState extends State<Divider_> {
     return SizedBox(
       height: dividerHeight,
       child: Divider(
-        color: Colors.black,
+        color: Colors.grey,
         thickness: dividerThickness,
         indent: dividerIndent,
         endIndent: dividerEndIndent,

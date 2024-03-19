@@ -134,7 +134,10 @@ class _PropertyTypeState extends State<PropertyType> {
                   padding: EdgeInsets.only(top: 5 * scaleFactor),
                   child: Text(
                     text,
-                    style: TextStyle(fontSize: textSize),
+                    style: TextStyle(
+                      fontSize: textSize,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
               ],

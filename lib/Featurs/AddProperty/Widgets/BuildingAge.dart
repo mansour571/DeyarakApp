@@ -8,29 +8,38 @@ class BuildingAge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Container(
-        height: 80,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: const Color.fromARGB(131, 0, 0, 0)),
-        ),
-        child: const Padding(
-          padding: EdgeInsets.only(left: 10),
-          child: TextField(
-            keyboardType: TextInputType.number,
-            cursorColor: Colors.black,
-            decoration: InputDecoration(
-              border: InputBorder.none,
-              labelText: 'Building Age ',
-              labelStyle: TextStyle(
-                fontSize: 15,
-                color: Color.fromARGB(255, 0, 0, 0),
-              ),
+      padding: const EdgeInsets.all(10),
+      child: TextField(
+        keyboardType: TextInputType.number,
+        decoration: InputDecoration(
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(14),
+              borderSide: const BorderSide(color: Colors.black),
             ),
-          ),
-        ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: Colors.black, width: 2),
+              borderRadius: BorderRadius.circular(14),
+            ),
+            labelText: 'Building Age ',
+            labelStyle: const TextStyle(
+              fontSize: 15,
+              // color: Color.fromARGB(255, 0, 0, 0),
+            )),
       ),
+      // TextField(
+      //   keyboardType: TextInputType.number,
+      //   cursorColor: Colors.black,
+      //   decoration: InputDecoration(
+      //     border: InputBorder.none,
+      //     labelText: 'Building Age ',
+      //     labelStyle: TextStyle(
+      //       fontSize: 15,
+      //       color: Color.fromARGB(255, 0, 0, 0),
+      //     ),
+      //   ),
+      // ),
     );
   }
 }
