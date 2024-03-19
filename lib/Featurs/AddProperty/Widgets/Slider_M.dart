@@ -37,35 +37,65 @@ class _Slider_MState extends State<Slider_M> {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Container(
+                SizedBox(
                   height: 70,
                   width: 165,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Color.fromARGB(60, 8, 2, 2)),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 7),
-                    child: TextFormField(
-                      controller: Controller,
-                      keyboardType: TextInputType.number,
-                      cursorColor: Colors.black,
-                      decoration: InputDecoration(
-                        suffixText: '${widget.kind}   ',
-                        border: InputBorder.none,
-                        labelText: widget.title,
-                        labelStyle: const TextStyle(
-                            fontSize: 19, color: Color.fromARGB(255, 0, 0, 0)),
+                  child: TextField(
+                    controller: Controller,
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      suffixText: '${widget.kind}   ',
+                      contentPadding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(14),
+                        borderSide: BorderSide(color: Colors.black),
                       ),
-                      onChanged: (val) {
-                        setState(() {
-                          double parsedValue = double.tryParse(val) ?? 50000;
-                          value = parsedValue;
-                        });
-                      },
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black, width: 2),
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                      hintText: "$value",
+                      labelText: widget.title,
+                      labelStyle: TextStyle(color: Colors.grey),
                     ),
+                    onChanged: (val) {
+                      setState(() {
+                        double parsedValue = double.tryParse(val) ?? 50000;
+                        value = parsedValue.clamp(0.0, widget.initialValue);
+                      });
+                    },
                   ),
                 ),
+                // Container(
+                //   height: 70,
+                //   width: 165,
+                //   decoration: BoxDecoration(
+                //     border: Border.all(color: Color.fromARGB(60, 8, 2, 2)),
+                //     borderRadius: BorderRadius.circular(20),
+                //   ),
+                //   child: Padding(
+                //     padding: const EdgeInsets.only(left: 7),
+                //     child: TextFormField(
+                //       controller: Controller,
+                //       keyboardType: TextInputType.number,
+                //       cursorColor: Colors.black,
+                //       decoration: InputDecoration(
+                //         suffixText: '${widget.kind}   ',
+                //         border: InputBorder.none,
+                //         labelText: widget.title,
+                //         labelStyle: const TextStyle(
+                //             fontSize: 19, color: Color.fromARGB(255, 0, 0, 0)),
+                //       ),
+                //       onChanged: (val) {
+                //         setState(() {
+                //           double parsedValue = double.tryParse(val) ?? 50000;
+                //           value = parsedValue;
+                //         });
+                //       },
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),

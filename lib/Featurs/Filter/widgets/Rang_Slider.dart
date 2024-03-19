@@ -85,67 +85,137 @@ class _MyWidgetState extends State<Rang_Slider> {
           Row(
             children: [
               Spacer(flex: 1),
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(color: const Color.fromARGB(106, 0, 0, 0)),
-                  borderRadius: BorderRadius.circular(queryWidth * 0.03),
-                ),
+              SizedBox(
                 height: textFieldHeight,
                 width: containerWidth,
-                child: Padding(
-                  padding: EdgeInsets.only(left: queryWidth * 0.015),
-                  child: TextFormField(
-                    controller: _minPriceController,
-                    keyboardType: TextInputType.number,
-                    cursorColor: Colors.black,
-                    decoration: InputDecoration(
-                      suffixText: '${widget.kind}   ',
-                      border: InputBorder.none,
-                      labelText: 'Minimum',
-                      labelStyle: TextStyle(
-                          fontSize: textFieldFontSize, color: Colors.black),
+                child: TextField(
+                  controller: _minPriceController,
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    suffixText: '${widget.kind}   ',
+                    contentPadding: EdgeInsets.symmetric(
+                        horizontal: containerWidth * 0.07,
+                        vertical: textFieldHeight * .8),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(14),
+                      borderSide: BorderSide(color: Colors.black),
                     ),
-                    onChanged: (val) {
-                      setState(() {
-                        double parsedValue = double.tryParse(val) ?? 0;
-                        _minPrice = parsedValue.clamp(
-                            widget.initialMinPrice, _maxPrice);
-                      });
-                    },
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black, width: 2),
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    labelText: 'Minimum',
+                    labelStyle: TextStyle(
+                      fontSize: textFieldFontSize,
+                    ),
                   ),
+                  onChanged: (val) {
+                    setState(() {
+                      double parsedValue = double.tryParse(val) ?? 0;
+                      _minPrice =
+                          parsedValue.clamp(widget.initialMinPrice, _maxPrice);
+                    });
+                  },
                 ),
               ),
+              // Container(
+              //   decoration: BoxDecoration(
+              //     border: Border.all(color: const Color.fromARGB(106, 0, 0, 0)),
+              //     borderRadius: BorderRadius.circular(queryWidth * 0.03),
+              //   ),
+              //   height: textFieldHeight,
+              //   width: containerWidth,
+              //   child: Padding(
+              //     padding: EdgeInsets.only(left: queryWidth * 0.015),
+              //     child: TextFormField(
+              //       controller: _minPriceController,
+              //       keyboardType: TextInputType.number,
+              //       // cursorColor: Colors.black,
+              //       decoration: InputDecoration(
+              //         suffixText: '${widget.kind}   ',
+              //         border: InputBorder.none,
+              //         labelText: 'Minimum',
+              //         labelStyle: TextStyle(
+              //           fontSize: textFieldFontSize,
+              //           // color: Colors.black,
+              //         ),
+              //       ),
+              //       onChanged: (val) {
+              //         setState(() {
+              //           double parsedValue = double.tryParse(val) ?? 0;
+              //           _minPrice = parsedValue.clamp(
+              //               widget.initialMinPrice, _maxPrice);
+              //         });
+              //       },
+              //     ),
+              //   ),
+              // ),
               Spacer(flex: 2),
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(color: const Color.fromARGB(106, 0, 0, 0)),
-                  borderRadius: BorderRadius.circular(queryWidth * 0.03),
-                ),
+              SizedBox(
                 height: textFieldHeight,
                 width: containerWidth,
-                child: Padding(
-                  padding: EdgeInsets.only(left: queryWidth * 0.015),
-                  child: TextFormField(
-                    controller: _maxPriceController,
-                    keyboardType: TextInputType.number,
-                    cursorColor: Colors.black,
-                    decoration: InputDecoration(
-                      suffixText: '${widget.kind}   ',
-                      border: InputBorder.none,
-                      labelText: 'Maximum',
-                      labelStyle: TextStyle(
-                          fontSize: textFieldFontSize, color: Colors.black),
+                child: TextField(
+                  controller: _maxPriceController,
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    suffixText: '${widget.kind}   ',
+                    contentPadding: EdgeInsets.symmetric(
+                        horizontal: containerWidth * 0.07,
+                        vertical: textFieldHeight * .8),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(14),
+                      borderSide: BorderSide(color: Colors.black),
                     ),
-                    onChanged: (val) {
-                      setState(() {
-                        double parsedValue = double.tryParse(val) ?? 50000;
-                        _maxPrice = parsedValue.clamp(
-                            _minPrice, widget.initialMaxPrice);
-                      });
-                    },
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black, width: 2),
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    labelText: 'Maximum',
+                    labelStyle: TextStyle(
+                      fontSize: textFieldFontSize,
+                    ),
                   ),
+                  onChanged: (val) {
+                    setState(() {
+                      double parsedValue = double.tryParse(val) ?? 50000;
+                      _maxPrice =
+                          parsedValue.clamp(_minPrice, widget.initialMaxPrice);
+                    });
+                  },
                 ),
               ),
+              // Container(
+              //   decoration: BoxDecoration(
+              //     border: Border.all(color: const Color.fromARGB(106, 0, 0, 0)),
+              //     borderRadius: BorderRadius.circular(queryWidth * 0.03),
+              //   ),
+              //   height: textFieldHeight,
+              //   width: containerWidth,
+              //   child: Padding(
+              //     padding: EdgeInsets.only(left: queryWidth * 0.015),
+              //     child: TextFormField(
+              //       controller: _maxPriceController,
+              //       keyboardType: TextInputType.number,
+              //       // cursorColor: Colors.black,
+              //       decoration: InputDecoration(
+              //         suffixText: '${widget.kind}   ',
+              //         border: InputBorder.none,
+              //         labelText: 'Maximum',
+              //         labelStyle: TextStyle(
+              //           fontSize: textFieldFontSize,
+              //           // color: Colors.black,
+              //         ),
+              //       ),
+              //       onChanged: (val) {
+              //         setState(() {
+              //           double parsedValue = double.tryParse(val) ?? 50000;
+              //           _maxPrice = parsedValue.clamp(
+              //               _minPrice, widget.initialMaxPrice);
+              //         });
+              //       },
+              //     ),
+              //   ),
+              // ),
               Spacer(flex: 1),
             ],
           ),
