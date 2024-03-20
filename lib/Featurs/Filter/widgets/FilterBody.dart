@@ -21,8 +21,6 @@ class _FilterState extends State<FilterBody> {
       appBar: AppBar(
         // bottom: Text('k'),
         elevation: 0,
-        // backgroundColor: const Color(0xffFAFAFA),
-        // backgroundColor: Color.fromARGB(255, 50, 62, 196),
         title: const Text(
           'Filter',
           style: TextStyle(
