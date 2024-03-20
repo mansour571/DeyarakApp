@@ -26,14 +26,11 @@ class _AddPropertyState extends State<AddPropertyBody> {
       appBar: AppBar(
         // bottom: Text('k'),
         elevation: 0,
-        // backgroundColor: const Color(0xffFAFAFA),
-        // backgroundColor: Color.fromARGB(255, 50, 62, 196),
         title: const Text(
           'Add Your Property',
           style: TextStyle(
             fontSize: 32,
             fontWeight: FontWeight.bold,
-            // color: Colors.black,
           ),
         ),
       ),
