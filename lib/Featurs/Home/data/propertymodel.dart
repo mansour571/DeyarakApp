@@ -24,13 +24,49 @@ abstract class PropertyModel {
     } else if (amentyname == 'Heating') {
       return Icons.fireplace_sharp;
     } else if (amentyname == 'Smoke Alarm') {
-      return FontAwesomeIcons.houseFire;
+      return FontAwesomeIcons.fire;
     } else if (amentyname == 'Air Conditioner') {
       return FontAwesomeIcons.snowflake;
     } else if (amentyname == 'Security') {
       return Icons.security;
     } else if (amentyname == 'Power Packup') {
       return Icons.power_rounded;
+    } else {
+      return Icons.no_photography_rounded;
+    }
+  }
+
+  static IconData propertyInfoIcon({required String label}) {
+    if (label == 'Price') {
+      return Icons.money_outlined;
+    }
+
+    if (label == 'Address') {
+      return Icons.location_on_outlined;
+    }
+    if (label == 'Size') {
+      return FontAwesomeIcons.upRightAndDownLeftFromCenter;
+    }
+    if (label == 'Rooms') {
+      return Icons.bedroom_parent_outlined;
+    }
+    if (label == 'Halls') {
+      return Icons.chair;
+    }
+    if (label == 'Bath') {
+      return Icons.bathtub_outlined;
+    }
+    if (label == 'Building Age') {
+      return Icons.house_rounded;
+    }
+    if (label == 'Elevator') {
+      return Icons.elevator_outlined;
+    }
+    if (label == 'Completion') {
+      return Icons.design_services_rounded;
+    }
+    if (label == 'Furniture') {
+      return Icons.light_outlined;
     } else {
       return Icons.no_photography_rounded;
     }

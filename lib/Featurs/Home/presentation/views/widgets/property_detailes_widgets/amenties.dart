@@ -14,7 +14,11 @@ class Amenties extends StatelessWidget {
     'Parking',
     'Air Conditioner',
     'Power Packup',
-    'Security'
+    'Security',
+    'TV',
+    'Smoke Alarm',
+    'Washer',
+    'Heating'
   ];
   @override
   Widget build(BuildContext context) {
