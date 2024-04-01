@@ -4,13 +4,22 @@ import 'package:flutter/material.dart';
 class customtextfield extends StatelessWidget {
   String hinttext;
   String labeltext;
+  TextInputType keyboard;
+  bool password;
 
-  customtextfield({super.key, required this.hinttext, required this.labeltext});
+  customtextfield(
+      {super.key,
+      required this.hinttext,
+      required this.labeltext,
+      required this.keyboard,
+      required this.password});
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 16),
       child: TextField(
+        obscureText: password,
+        keyboardType: keyboard,
         decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(vertical: 20),
             border: OutlineInputBorder(

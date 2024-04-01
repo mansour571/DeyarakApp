@@ -3,7 +3,7 @@ import 'package:deyarakapp/Featurs/personalinformation/presentation/views/widget
 import 'package:deyarakapp/Featurs/personalinformation/presentation/views/widgets/customtextfield.dart';
 import 'package:deyarakapp/constants.dart';
 import 'package:deyarakapp/core/utils/fonts.dart';
-import 'package:deyarakapp/core/utils/router.dart';
+
 import 'package:flutter/material.dart';
 
 class phonenumberwidget extends StatelessWidget {
@@ -16,7 +16,6 @@ class phonenumberwidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           appbar(
-            k: AppRouter.kpersonalinformation,
             text: 'Personal Information',
             h: 0.03,
           ),
@@ -25,7 +24,11 @@ class phonenumberwidget extends StatelessWidget {
             style: Fonts.textstyle24,
           ),
           customtextfield(
-              hinttext: '  01033886218', labeltext: '  Add Phone Number'),
+            password: false,
+            hinttext: '  01033886218',
+            labeltext: '  Add Phone Number',
+            keyboard: TextInputType.phone,
+          ),
           Button(
             text: 'Save',
             ontap: () {},

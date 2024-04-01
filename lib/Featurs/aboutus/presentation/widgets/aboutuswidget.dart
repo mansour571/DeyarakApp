@@ -1,6 +1,6 @@
 import 'package:deyarakapp/Featurs/personalinformation/presentation/views/widgets/appbarwidget.dart';
 import 'package:deyarakapp/core/utils/fonts.dart';
-import 'package:deyarakapp/core/utils/router.dart';
+
 import 'package:flutter/material.dart';
 
 class aboutuswidget extends StatelessWidget {
@@ -11,7 +11,6 @@ class aboutuswidget extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 12),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           appbar(
-            k: AppRouter.kmenu,
             text: 'About Deyarak',
             h: 0.03,
           ),

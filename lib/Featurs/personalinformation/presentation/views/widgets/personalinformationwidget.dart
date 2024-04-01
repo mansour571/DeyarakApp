@@ -13,7 +13,6 @@ class personalinformationwidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           appbar(
-            k: AppRouter.kmenu,
             text: 'Personal Information',
             h: 0.03,
           ),

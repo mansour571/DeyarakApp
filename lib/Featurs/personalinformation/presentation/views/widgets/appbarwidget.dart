@@ -4,12 +4,10 @@ import 'package:go_router/go_router.dart';
 
 // ignore: must_be_immutable
 class appbar extends StatelessWidget {
-  var k;
   String text;
   double h;
   appbar({
     super.key,
-    required this.k,
     required this.text,
     required this.h,
   });

@@ -2,7 +2,7 @@ import 'package:deyarakapp/Featurs/personalinformation/presentation/views/widget
 import 'package:deyarakapp/Featurs/personalinformation/presentation/views/widgets/appbarwidget.dart';
 import 'package:deyarakapp/Featurs/personalinformation/presentation/views/widgets/customtextfield.dart';
 import 'package:deyarakapp/constants.dart';
-import 'package:deyarakapp/core/utils/router.dart';
+
 import 'package:flutter/material.dart';
 
 class contactuswidget extends StatelessWidget {
@@ -15,13 +15,27 @@ class contactuswidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             appbar(
-              k: AppRouter.kmenu,
               text: 'Contact Us',
               h: 0.03,
             ),
-            customtextfield(hinttext: '', labeltext: 'User Name'),
-            customtextfield(hinttext: '', labeltext: 'Phone Number'),
-            customtextfield(hinttext: '', labeltext: 'Message Title'),
+            customtextfield(
+              password: false,
+              hinttext: '',
+              labeltext: 'User Name',
+              keyboard: TextInputType.name,
+            ),
+            customtextfield(
+              hinttext: '',
+              labeltext: 'Phone Number',
+              keyboard: TextInputType.phone,
+              password: false,
+            ),
+            customtextfield(
+              password: false,
+              hinttext: '',
+              labeltext: 'Message Title',
+              keyboard: TextInputType.multiline,
+            ),
             Padding(
               padding: const EdgeInsets.only(top: 12),
               child: TextFormField(
