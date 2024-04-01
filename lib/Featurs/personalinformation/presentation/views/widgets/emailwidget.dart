@@ -25,6 +25,19 @@ class emailwidget extends StatelessWidget {
             hinttext: '  AhmedMohamed@gmail.com',
             labeltext: '  Email',
             keyboard: TextInputType.emailAddress,
+            validatee: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Username cannot be empty.';
+              } else if (value.length < 4) {
+                return 'Username must be at least 4 characters long.';
+              } else if (value.length > 20) {
+                return 'Username cannot be longer than 20 characters.';
+              } else if (!RegExp(r"^[a-zA-Z0-9._]+$").hasMatch(value)) {
+                return 'Username can only contain letters, numbers, periods, and underscores.';
+              } else {
+                return null;
+              }
+            },
           ),
         ],
       ),

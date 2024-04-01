@@ -1,7 +1,6 @@
 import 'package:deyarakapp/Featurs/personalinformation/presentation/views/widgets/Button.dart';
 import 'package:deyarakapp/Featurs/personalinformation/presentation/views/widgets/appbarwidget.dart';
 import 'package:deyarakapp/Featurs/personalinformation/presentation/views/widgets/customtextfield.dart';
-import 'package:deyarakapp/Featurs/register_screen/widget/TextFieldInput.dart';
 
 import 'package:deyarakapp/constants.dart';
 import 'package:deyarakapp/core/utils/fonts.dart';
@@ -32,11 +31,17 @@ class confirmpasswidget extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.045,
               ),
               customtextfield(
-                password: true,
-                hinttext: '',
-                labeltext: 'confirm password',
-                keyboard: TextInputType.visiblePassword,
-              ),
+                  password: true,
+                  hinttext: '',
+                  labeltext: 'confirm password',
+                  keyboard: TextInputType.visiblePassword,
+                  validatee: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'password cannot be empty.';
+                    } else {
+                      return null;
+                    }
+                  }),
               Button(
                 text: 'Deactivate',
                 ontap: () {

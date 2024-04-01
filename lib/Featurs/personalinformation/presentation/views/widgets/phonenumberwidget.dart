@@ -24,11 +24,23 @@ class phonenumberwidget extends StatelessWidget {
             style: Fonts.textstyle24,
           ),
           customtextfield(
-            password: false,
-            hinttext: '  01033886218',
-            labeltext: '  Add Phone Number',
-            keyboard: TextInputType.phone,
-          ),
+              password: false,
+              hinttext: '  01033886218',
+              labeltext: '  Add Phone Number',
+              keyboard: TextInputType.phone,
+              validatee: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Username cannot be empty.';
+                } else if (value.length < 4) {
+                  return 'Username must be at least 4 characters long.';
+                } else if (value.length > 20) {
+                  return 'Username cannot be longer than 20 characters.';
+                } else if (!RegExp(r"^[a-zA-Z0-9._]+$").hasMatch(value)) {
+                  return 'Username can only contain letters, numbers, periods, and underscores.';
+                } else {
+                  return null;
+                }
+              }),
           Button(
             text: 'Save',
             ontap: () {},
