@@ -11,22 +11,28 @@ class PropertyInfoRow extends StatelessWidget {
   final IconData icon;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          label,
-          style: const TextStyle(fontSize: 16),
-        ),
-        Text(
-          value,
-          style: const TextStyle(color: Color.fromARGB(255, 78, 78, 78)),
-        ),
-        Icon(
-          icon,
-          color: Color.fromARGB(255, 99, 99, 99),
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(2),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          SizedBox(
+            width: 85,
+            child: Text(
+              label,
+              style: const TextStyle(fontSize: 16),
+            ),
+          ),
+          Text(
+            value,
+            style: const TextStyle(color: Color.fromARGB(255, 78, 78, 78)),
+          ),
+          Icon(
+            icon,
+            color: Color.fromARGB(255, 99, 99, 99),
+          ),
+        ],
+      ),
     );
   }
 }
