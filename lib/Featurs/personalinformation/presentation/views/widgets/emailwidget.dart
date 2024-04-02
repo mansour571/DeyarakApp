@@ -34,6 +34,8 @@ class emailwidget extends StatelessWidget {
                 return 'Username cannot be longer than 20 characters.';
               } else if (!RegExp(r"^[a-zA-Z0-9._]+$").hasMatch(value)) {
                 return 'Username can only contain letters, numbers, periods, and underscores.';
+              } else if (!(value.contains('@')) && value.isNotEmpty) {
+                return "Enter a valid email address!";
               } else {
                 return null;
               }
