@@ -9,7 +9,8 @@ class ContactMethodBar extends StatelessWidget {
   ContactMethodBar({super.key});
 
   final String phone = '+96612345678';
-  final Uri _url = Uri.parse('https://wa.me/+201093809647');
+
+  final Uri _url = Uri.parse('https://wa.me/+201099999999');
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
