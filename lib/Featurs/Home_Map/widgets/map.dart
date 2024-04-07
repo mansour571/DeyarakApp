@@ -22,7 +22,7 @@ class _MapState extends State<Map_w> {
     var queryheight = MediaQuery.of(context).size.height;
 
     return SizedBox(
-      height: queryheight * 0.695,
+      height: MediaQuery.of(context).size.height * .66,
       width: double.infinity,
       child: GoogleMap(
         mapType: MapType.hybrid,
