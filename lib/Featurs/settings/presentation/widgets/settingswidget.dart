@@ -1,11 +1,13 @@
 import 'package:deyarakapp/Featurs/personalinformation/presentation/views/widgets/Button.dart';
 import 'package:deyarakapp/Featurs/personalinformation/presentation/views/widgets/appbarwidget.dart';
+import 'package:deyarakapp/Featurs/settings/presentation/widgets/deactivateaccountitem.dart';
 import 'package:deyarakapp/constants.dart';
 import 'package:deyarakapp/core/utils/fonts.dart';
 import 'package:deyarakapp/core/utils/router.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 import 'package:deyarakapp/theme/themeprovider.dart';
 
 class settingswidget extends StatelessWidget {
@@ -18,7 +20,6 @@ class settingswidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             appbar(
-              k: AppRouter.kmenu,
               text: 'Settings',
               h: 0.03,
             ),
@@ -29,6 +30,18 @@ class settingswidget extends StatelessWidget {
                       .Toggletheme();
                 },
                 child: switchbutton()),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.045,
+            ),
+            GestureDetector(
+              onTap: () {
+                GoRouter.of(context).push(AppRouter.kdeactivateaccount);
+              },
+              child: deactivateaccountitemwidget(
+                base: 'Deactivate Account',
+                hint: 'Find out how to Activate your Account',
+              ),
+            ),
             Button(
               text: 'Save',
               ontap: () {},

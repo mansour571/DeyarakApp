@@ -2,7 +2,7 @@ import 'package:deyarakapp/Featurs/personalinformation/presentation/views/widget
 import 'package:deyarakapp/Featurs/personalinformation/presentation/views/widgets/appbarwidget.dart';
 import 'package:deyarakapp/Featurs/personalinformation/presentation/views/widgets/customtextfield.dart';
 import 'package:deyarakapp/constants.dart';
-import 'package:deyarakapp/core/utils/router.dart';
+
 import 'package:flutter/material.dart';
 
 class contactuswidget extends StatelessWidget {
@@ -15,13 +15,65 @@ class contactuswidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             appbar(
-              k: AppRouter.kmenu,
               text: 'Contact Us',
               h: 0.03,
             ),
-            customtextfield(hinttext: '', labeltext: 'User Name'),
-            customtextfield(hinttext: '', labeltext: 'Phone Number'),
-            customtextfield(hinttext: '', labeltext: 'Message Title'),
+            customtextfield(
+              password: false,
+              hinttext: '',
+              labeltext: 'User Name',
+              keyboard: TextInputType.name,
+              validatee: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Username cannot be empty.';
+                } else if (value.length < 4) {
+                  return 'Username must be at least 4 characters long.';
+                } else if (value.length > 20) {
+                  return 'Username cannot be longer than 20 characters.';
+                } else if (!RegExp(r"^[a-zA-Z0-9._]+$").hasMatch(value)) {
+                  return 'Username can only contain letters, numbers, periods, and underscores.';
+                } else {
+                  return null;
+                }
+              },
+            ),
+            customtextfield(
+                hinttext: '',
+                labeltext: 'Phone Number',
+                keyboard: TextInputType.phone,
+                password: false,
+                validatee: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Username cannot be empty.';
+                  } else if (value.length < 4) {
+                    return 'Username must be at least 4 characters long.';
+                  } else if (value.length > 20) {
+                    return 'Username cannot be longer than 20 characters.';
+                  } else if (!RegExp(r"^[a-zA-Z0-9._]+$").hasMatch(value)) {
+                    return 'Username can only contain letters, numbers, periods, and underscores.';
+                  } else {
+                    return null;
+                  }
+                }),
+            customtextfield(
+              password: false,
+              hinttext: '',
+              labeltext: 'Message Title',
+              keyboard: TextInputType.multiline,
+              validatee: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Message Title cannot be empty.';
+                } else if (value.length < 4) {
+                  return 'Message Title must be at least 4 characters long.';
+                } else if (value.length > 50) {
+                  return 'Message Title cannot be longer than 50 characters.';
+                } else if (!RegExp(r"^[a-zA-Z0-9._]+$").hasMatch(value)) {
+                  return 'Message Title can only contain letters, numbers, periods, and underscores.';
+                } else {
+                  return null;
+                }
+              },
+            ),
             Padding(
               padding: const EdgeInsets.only(top: 12),
               child: TextFormField(

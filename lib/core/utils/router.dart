@@ -9,7 +9,9 @@ import 'package:deyarakapp/Featurs/personalinformation/presentation/views/phonen
 import 'package:deyarakapp/Featurs/personalinformation/presentation/views/usernameview.dart';
 import 'package:deyarakapp/Featurs/profile/presentation/profileview.dart';
 import 'package:deyarakapp/Featurs/register_screen/register_view.dart';
+import 'package:deyarakapp/Featurs/settings/presentation/deactivateaccountview.dart';
 import 'package:deyarakapp/Featurs/settings/presentation/settingsview.dart';
+import 'package:deyarakapp/Featurs/settings/presentation/widgets/confirmpass.dart';
 import 'package:deyarakapp/Featurs/splash_screen/first_Page/Welocme_Page.dart';
 import 'package:deyarakapp/Featurs/splash_screen/splashScreen.dart';
 import 'package:go_router/go_router.dart';
@@ -34,10 +36,12 @@ abstract class AppRouter {
   static const kwelcome = '/welcome';
   static const kFilter = '/Filter';
   static const kAddProperty = '/AddProperty';
+  static const kdeactivateaccount = '/deactivateaccountview';
+  static const kconfirmpass = '/confirmpass';
 
   static final router = GoRouter(
     routes: [
-       GoRoute(
+      GoRoute(
         path: kFilter,
         builder: (context, state) => const FilterView(),
       ),
@@ -100,6 +104,14 @@ abstract class AppRouter {
       GoRoute(
         path: kprofile,
         builder: (context, state) => profile(),
+      ),
+      GoRoute(
+        path: kdeactivateaccount,
+        builder: (context, state) => deactivateaccount(),
+      ),
+      GoRoute(
+        path: kconfirmpass,
+        builder: (context, state) => confirmpasswidget(),
       ),
     ],
   );

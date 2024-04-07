@@ -4,13 +4,25 @@ import 'package:flutter/material.dart';
 class customtextfield extends StatelessWidget {
   String hinttext;
   String labeltext;
+  TextInputType keyboard;
+  bool password;
+  FormFieldValidator<String> validatee;
 
-  customtextfield({super.key, required this.hinttext, required this.labeltext});
+  customtextfield(
+      {super.key,
+      required this.hinttext,
+      required this.labeltext,
+      required this.keyboard,
+      required this.password,
+      required this.validatee});
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 16),
-      child: TextField(
+      child: TextFormField(
+        validator: validatee,
+        obscureText: password,
+        keyboardType: keyboard,
         decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(vertical: 20),
             border: OutlineInputBorder(
