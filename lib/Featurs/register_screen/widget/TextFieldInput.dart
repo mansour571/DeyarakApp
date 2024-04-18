@@ -11,20 +11,20 @@ class TextFieldInputt extends StatelessWidget {
       required this.formatter,
       this.keybordtype,
       required this.password,
-      required this.validatee,
-      required this.colorr});
-
+      required this.colorr,
+      required this.controllerr,
+      this.validator});
+  TextEditingController controllerr;
   Color? colorr;
   String? errormessage;
   String? text;
   Function? function;
   IconData? icon;
+  String? Function(String?)? validator;
   List<TextInputFormatter> formatter =
       []; // ex : FilteringTextInputFormatter.digitsOnly
   TextInputType? keybordtype; // ex : TextInputType.phone
   bool password; //ex true or false
-  FormFieldValidator<String>
-      validatee; //ex   if (value == null || value.isEmpty) {return 'Username cannot be empty.';
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,8 @@ class TextFieldInputt extends StatelessWidget {
       padding: EdgeInsets.only(left: querywidth / 15, right: querywidth / 15),
       child: Form(
         child: TextFormField(
-          validator: validatee,
+          controller: controllerr,
+          validator: validator,
           obscureText: password,
           inputFormatters: formatter,
           keyboardType: keybordtype,
@@ -71,7 +72,8 @@ class TextFieldInputt extends StatelessWidget {
             ),
             errorBorder: UnderlineInputBorder(
               // borderRadius: BorderRadius.circular(radius),
-              borderSide: BorderSide(width: 2, color: Colors.black),
+              borderSide: BorderSide(
+                  width: 2, color: const Color.fromARGB(255, 255, 0, 0)),
             ),
             labelStyle: TextStyle(
               color: textfieldscolor,
